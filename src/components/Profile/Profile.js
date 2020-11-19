@@ -1,9 +1,11 @@
 import React from 'react';
 import './Profile.css';
 import StatsItem from './StatsItem/StatsItem.js';
+import defaultImg from './default.jpg';
+import propTypes from 'prop-types';
 
-const Profile = ({ user }) => {
-  const { name, tag, location, avatar, stats } = user;
+const Profile = ({ name, tag, location, avatar, stats }) => {
+  //   const { n } = user;
   return (
     <div className="profile">
       <div className="description">
@@ -20,6 +22,18 @@ const Profile = ({ user }) => {
       </ul>
     </div>
   );
+};
+
+Profile.defaultProps = {
+  avatar: defaultImg,
+};
+
+Profile.propTypes = {
+  avatar: propTypes.string.isRequired,
+  name: propTypes.string.isRequired,
+  tag: propTypes.string.isRequired,
+  location: propTypes.string.isRequired,
+  stats: propTypes.oneOfType([propTypes.object, propTypes.array]).isRequired,
 };
 
 export default Profile;
