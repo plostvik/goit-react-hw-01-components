@@ -1,21 +1,21 @@
 import React from 'react';
-import './Profile.css';
+import Styles from './Profile.module.css';
 import StatsItem from './StatsItem/StatsItem.js';
 import defaultImg from './default.jpg';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 const Profile = ({ name, tag, location, avatar, stats }) => {
-  //   const { n } = user;
+  console.log(Styles);
   return (
-    <div className="profile">
-      <div className="description">
-        <img src={avatar} alt="user avatar" className="avatar" />
-        <p className="name">{name}</p>
-        <p className="tag">{tag}</p>
-        <p className="location">{location}</p>
+    <div className={Styles.profile}>
+      <div className={Styles.description}>
+        <img src={avatar} alt={`${name} avatar`} className={Styles.avatar} />
+        <p className={Styles.name}>{name}</p>
+        <p className={Styles.tag}>{`@${tag}`}</p>
+        <p className={Styles.location}>{location}</p>
       </div>
 
-      <ul className="stats">
+      <ul className={Styles.stats}>
         {Object.entries(stats).map(el => {
           return <StatsItem key={stats[el[0]]} el={el} />;
         })}
@@ -26,14 +26,16 @@ const Profile = ({ name, tag, location, avatar, stats }) => {
 
 Profile.defaultProps = {
   avatar: defaultImg,
+  location: 'Unknown',
+  name: 'Anonymous',
 };
 
 Profile.propTypes = {
-  avatar: propTypes.string.isRequired,
-  name: propTypes.string.isRequired,
-  tag: propTypes.string.isRequired,
-  location: propTypes.string.isRequired,
-  stats: propTypes.oneOfType([propTypes.object, propTypes.array]).isRequired,
+  avatar: PropTypes.string,
+  name: PropTypes.string,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string,
+  stats: PropTypes.oneOfType([PropTypes.object, PropTypes.array]).isRequired,
 };
 
 export default Profile;

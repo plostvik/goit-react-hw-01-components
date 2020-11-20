@@ -1,18 +1,18 @@
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
+import Styles from '../Profile.module.css';
 
 const StatsItem = ({ el: [key, value] }) => {
   return (
-    <li>
-      <span className="label">{key} </span>
-      <span className="quantity">{value}</span>
+    <li className={Styles.statsItem}>
+      <span className={Styles.label}>{key} </span>
+      <span className={Styles.quantity}>{value}</span>
     </li>
   );
 };
 
 StatsItem.propTypes = {
-  key: propTypes.string,
-  value: propTypes.number,
+  el: PropTypes.array,
 };
 
 export default StatsItem;

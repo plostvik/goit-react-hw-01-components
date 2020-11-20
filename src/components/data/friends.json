@@ -1,0 +1,31 @@
+[
+  {
+    "avatar": "https://static.wikia.nocookie.net/breakingbad/images/e/ea/Season_4_-_Heisenberg.jpg/revision/latest/scale-to-width-down/340?cb=20110817002354",
+    "name": "Heisenberg",
+    "isOnline": true,
+    "id": 1812
+  },
+  {
+    "avatar": "https://upload.wikimedia.org/wikipedia/en/c/c6/Jesse_Pinkman_S5B.png",
+    "name": "Jesse",
+    "isOnline": false,
+    "id": 1137
+  },
+  {
+    "avatar": "https://static.wikia.nocookie.net/breakingbad/images/c/c9/SaulS5.jpg/revision/latest/scale-to-width-down/340?cb=20120620015329",
+    "name": "Saul",
+    "isOnline": true,
+    "id": 1213
+  },
+  {
+    "name": "Gus",
+    "isOnline": true,
+    "id": 1714
+  },
+  {
+    "avatar": "https://static.wikia.nocookie.net/breakingbad/images/b/b7/HankS5.jpg/revision/latest?cb=20120620014136",
+    "name": "Hank",
+    "isOnline": false,
+    "id": 1284
+  }
+]

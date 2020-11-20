@@ -1,29 +1,34 @@
 import React from 'react';
-import './Statistics.css';
+import Styles from './Statistics.module.css';
 import PropTypes from 'prop-types';
-
-// Цвет фона элемента статистики в оформлении можно пропустить, либо создать функцию для генерации случайного цвета.
+import StatisticItem from './StatisticItem.js';
 
 const Statistics = ({ title, stats }) => {
   return (
-    <section className="statistics">
-      {title ? <h2 className="title">{title}</h2> : ''}
-      <ul className="stat-list">
+    <section className={Styles.statistics}>
+      {title && <h2 className={Styles.title}>{title}</h2>}
+      <ul className={Styles.statList}>
         {stats.map(el => {
-          return (
-            <li className="item" key={el.id}>
-              <span className="label">{el.label}</span>
-              <span className="percentage">{el.percentage}</span>
-            </li>
-          );
+          return <StatisticItem key={el.id} {...el} />;
         })}
       </ul>
     </section>
   );
 };
 
-Statistics.propTypes = {
-  stats: PropTypes.array.isRequired,
+Statistics.defaultProps = {
+  title: '',
+};
+
+Statistics.propType = {
+  title: PropTypes.string,
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      label: PropTypes.string,
+      percentage: PropTypes.number,
+    }),
+  ).isRequired,
 };
 
 export default Statistics;
