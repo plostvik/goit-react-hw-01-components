@@ -1,3 +1,5 @@
+@value primaryColor from "../variables.modules.css";
+
 .transactionHistory {
   width: 700px;
   margin: 60px auto;
@@ -31,5 +33,5 @@
 }
 
 .tableRow:nth-child(2n-1) {
-  background-color: #ffffff;
+  background-color: primaryColor;
 }

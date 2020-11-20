@@ -1,9 +1,11 @@
+@value primaryColor from "../variables.modules.css";
+
 .statistics {
   display: block;
   width: 400px;
   margin: 60px auto;
   padding-top: 30px;
-  background-color: #fff;
+  background-color: primaryColor;
   border-radius: 4px;
 }
 
@@ -21,7 +23,7 @@
   align-items: center;
   width: 20%;
   padding: 20px;
-  color: #fff;
+  color: primaryColor;
 }
 
 .title {
