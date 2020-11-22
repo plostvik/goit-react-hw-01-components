@@ -1,21 +1,20 @@
 import React from 'react';
-import Styles from './Profile.module.css';
+import styles from './Profile.module.css';
 import StatsItem from './StatsItem/StatsItem.js';
 import defaultImg from './default.jpg';
 import PropTypes from 'prop-types';
 
 const Profile = ({ name, tag, location, avatar, stats }) => {
-  console.log(Styles);
   return (
-    <div className={Styles.profile}>
-      <div className={Styles.description}>
-        <img src={avatar} alt={`${name} avatar`} className={Styles.avatar} />
-        <p className={Styles.name}>{name}</p>
-        <p className={Styles.tag}>{`@${tag}`}</p>
-        <p className={Styles.location}>{location}</p>
+    <div className={styles.profile}>
+      <div className={styles.description}>
+        <img src={avatar} alt={`${name} avatar`} className={styles.avatar} />
+        <p className={styles.name}>{name}</p>
+        <p className={styles.tag}>{`@${tag}`}</p>
+        <p className={styles.location}>{location}</p>
       </div>
 
-      <ul className={Styles.stats}>
+      <ul className={styles.stats}>
         {Object.entries(stats).map(el => {
           return <StatsItem key={stats[el[0]]} el={el} />;
         })}

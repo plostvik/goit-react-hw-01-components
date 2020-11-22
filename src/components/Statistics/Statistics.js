@@ -1,13 +1,13 @@
 import React from 'react';
-import Styles from './Statistics.module.css';
+import styles from './Statistics.module.css';
 import PropTypes from 'prop-types';
 import StatisticItem from './StatisticItem.js';
 
 const Statistics = ({ title, stats }) => {
   return (
-    <section className={Styles.statistics}>
-      {title && <h2 className={Styles.title}>{title}</h2>}
-      <ul className={Styles.statList}>
+    <section className={styles.statistics}>
+      {title && <h2 className={styles.title}>{title}</h2>}
+      <ul className={styles.statList}>
         {stats.map(el => {
           return <StatisticItem key={el.id} {...el} />;
         })}
